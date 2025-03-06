@@ -1,10 +1,37 @@
+"use client";
+import { useState, useEffect } from "react";
+import { getBackgroundImages } from "@/lib/services/imageService";
+import { getProducts, Product } from "@/lib/services/productService";
+
 export default function Home() {
+  const [bgImages, setBgImages] = useState<string[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      const imageUrls = await getBackgroundImages();
+      //console.log("Background Image URL:", imageUrl);
+      setBgImages(imageUrls);
+    };
+
+    fetchImage();
+  }, []);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const data = await getProducts();
+      setProducts(data);
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="bg-white font-[family-name:var(--font-poppins)]">
       <main className="relative w-full h-screen">
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/hero.png')" }}
+          style={{ backgroundImage: `url("${bgImages[0]}")` }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="bg-slate-900 opacity-25 p-20 ml-20 mt-100 w-200 h-60 relative text-white z-10"></div>
@@ -17,7 +44,7 @@ export default function Home() {
       </main>
       <div className="bg-slate-200 h-screen w screen pt-26 px-20 pb-20">
         <div className="flex gap-x-30">
-          <img src="/design.png" className="w-144 h-144" />
+          <img src={bgImages[1]} className="w-144 h-144" />
           <div className="flex flex-col p-5 text-black gap-y-4">
             <h1 className=" text-6xl">About Us</h1>
             <p className="text-xl font-[poppins] font-light text-justify">
@@ -40,7 +67,7 @@ export default function Home() {
 
       <div className="bg-slate-200 h-screen w screen pt-26 px-20 pb-10">
         <div className="flex flex-col w-full h-full">
-          <div className="bg-slate-500 opacity-90 w-full h-1/3 p-4 ">
+          <div className="bg-slate-500 opacity-90 w-full h-1/3 p-4 rounded-sm">
             <div className="flex flex-col items-center w-full gap-y-5">
               <h1 className="text-4xl ">Our Services</h1>
               <div className="flex justify-center w-full h-full">
@@ -69,36 +96,28 @@ export default function Home() {
             <div className="flex flex-col items-center w-full gap-y-5">
               <h1 className="text-4xl text-black">Our Projects</h1>
               <div className="flex justify-between w-full h-full">
-                <div className=" card bg-white flex flex-col rounded-md w-100 h-70 shadow-md p-2">
-                  <img
-                    className="w-full h-40 object-cover rounded-t-md"
-                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                  />
-                  <h3 className="text-l mt-3 text-black font-medium font-[poppins]">
-                    Lorem ipsum dolor sit amet.
-                  </h3>
-                </div>
-                <div className=" card bg-white flex flex-col rounded-md w-100 h-70 shadow-md p-2">
-                  <img
-                    className="w-full h-40 object-cover rounded-t-md"
-                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                  />
-                  <h3 className="text-l mt-3 text-black font-medium font-[poppins]">
-                    Lorem ipsum dolor sit amet.
-                  </h3>
-                </div>
-                <div className=" card bg-white flex flex-col rounded-md w-100 h-70 shadow-md p-2">
-                  <img
-                    className="w-full h-40 object-cover rounded-t-md"
-                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                  />
-                  <h3 className="text-l mt-3 text-black font-medium font-[poppins]">
-                    Lorem ipsum dolor sit amet.
-                  </h3>
-                </div>
+                {products.length > 0 ? (
+                  products.map((product, index) => (
+                    <div
+                      key={index}
+                      className="card bg-white flex flex-col rounded-md w-100 h-70 items-center shadow-md p-2"
+                    >
+                      <img
+                        className="w-full h-40 object-cover rounded-t-md mb-2"
+                        src={product.img}
+                        alt={product.title}
+                      />
+                      <h3 className="text-l mt-3 text-black font-medium font-[poppins] mb-2">
+                        {product.title}
+                      </h3>
+                      <p className="text-md text-gray-500">
+                        {product.category}
+                      </p>
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-xl text-gray-500">No products available</p>
+                )}
               </div>
             </div>
           </div>
