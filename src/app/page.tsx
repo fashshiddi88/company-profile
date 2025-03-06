@@ -37,6 +37,73 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="bg-slate-200 h-screen w screen pt-26 px-20 pb-10">
+        <div className="flex flex-col w-full h-full">
+          <div className="bg-slate-500 opacity-90 w-full h-1/3 p-4 ">
+            <div className="flex flex-col items-center w-full gap-y-5">
+              <h1 className="text-4xl ">Our Services</h1>
+              <div className="flex justify-center w-full h-full">
+                <div className="w-1/3 h-full flex flex-col justify-center items-center">
+                  <div className="w-20 h-20 rounded-full bg-slate-700 opacity-90 flex justify-center items-center">
+                    <img src="/article.svg" alt="" className="w-15 h-15" />
+                  </div>
+                  <h2 className="text-xl text-bold font-[poppins]">Planning</h2>
+                </div>
+                <div className="w-1/3 h-full  flex flex-col justify-center items-center">
+                  <div className="w-20 h-20 rounded-full bg-slate-700 opacity-90 flex justify-center items-center">
+                    <img src="/home.svg" alt="" className="w-15 h-15" />
+                  </div>
+                  <h2 className="text-xl text-bold font-[poppins]">Exterior</h2>
+                </div>
+                <div className="w-1/3 h-full  flex flex-col justify-center items-center">
+                  <div className="w-20 h-20 rounded-full bg-slate-700 opacity-90 flex justify-center items-center">
+                    <img src="/chair.svg" alt="" className="w-15 h-15" />
+                  </div>
+                  <h2 className="text-xl text-bold font-[poppins]">Interior</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full h-2/3 p-4">
+            <div className="flex flex-col items-center w-full gap-y-5">
+              <h1 className="text-4xl text-black">Our Projects</h1>
+              <div className="flex justify-between w-full h-full">
+                <div className=" card bg-white flex flex-col rounded-md w-100 h-70 shadow-md p-2">
+                  <img
+                    className="w-full h-40 object-cover rounded-t-md"
+                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt=""
+                  />
+                  <h3 className="text-l mt-3 text-black font-medium font-[poppins]">
+                    Lorem ipsum dolor sit amet.
+                  </h3>
+                </div>
+                <div className=" card bg-white flex flex-col rounded-md w-100 h-70 shadow-md p-2">
+                  <img
+                    className="w-full h-40 object-cover rounded-t-md"
+                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt=""
+                  />
+                  <h3 className="text-l mt-3 text-black font-medium font-[poppins]">
+                    Lorem ipsum dolor sit amet.
+                  </h3>
+                </div>
+                <div className=" card bg-white flex flex-col rounded-md w-100 h-70 shadow-md p-2">
+                  <img
+                    className="w-full h-40 object-cover rounded-t-md"
+                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt=""
+                  />
+                  <h3 className="text-l mt-3 text-black font-medium font-[poppins]">
+                    Lorem ipsum dolor sit amet.
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
