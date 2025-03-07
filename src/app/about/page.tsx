@@ -28,7 +28,7 @@ export default function AboutUs() {
             penggunanya.
           </p>
           <p className="text-l font-light text-gray-800 text-justify font-[poppins]">
-            ArchiHub didirikan oleh Michael Pratama, seorang arsitek visioner
+            ArchiHub didirikan oleh Michael Setiawan, seorang arsitek visioner
             yang ingin mengubah cara orang melihat dan merasakan ruang. Dengan
             dukungan tim yang profesional dan berdedikasi, ArchiHub terus
             menghadirkan desain yang mengutamakan keseimbangan antara estetika,

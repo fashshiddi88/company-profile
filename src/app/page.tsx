@@ -42,9 +42,11 @@ export default function Home() {
             <p className="text-xl font-[poppins] font-light text-justify">
               ArchiHub didirikan pada tahun 2007 di Jakarta dengan visi untuk
               menghadirkan solusi arsitektur yang tidak hanya estetis tetapi
-              juga berkelanjutan.
-              <span className="underline">
-                <Link href={"/about"}>Selengkapnya</Link>
+              juga berkelanjutan.&nbsp;
+              <span>
+                <Link className="underline" href={"/about"}>
+                  Selengkapnya
+                </Link>
               </span>
             </p>
           </div>
