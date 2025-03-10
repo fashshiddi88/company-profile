@@ -14,12 +14,12 @@ export default function CustomerCard() {
     fetchCustomers();
   }, []);
   return (
-    <div className="flex w-full justify-between items-center gap-x-10">
+    <div className="flex flex-wrap justify-center md:justify-between items-center gap-6">
       {customers.length > 0 ? (
         customers.map((customer, index) => (
           <div
             key={index}
-            className="card bg-white flex rounded-md w-105 h-50 items-center shadow-md p-2 gap-x-4"
+            className="card bg-white flex flex-col md:flex-row rounded-md w-full md:w-105 h-auto md:h-50 items-center shadow-md p-4 gap-4"
           >
             <div className="relative w-20 h-20 overflow-hidden aspect-square mb-2">
               <Image
@@ -30,19 +30,19 @@ export default function CustomerCard() {
                 className="rounded-full"
               />
             </div>
-            <div className="flex flex-col p-2 w-80 h-full justify-center">
-              <h3 className="text-l mt-3 text-black font-medium font-[poppins] mb-2">
+            <div className="flex flex-col p-2 w-full md:w-80 h-full justify-center text-center md:text-left">
+              <h3 className="text-base md:text-lg mt-2 md:mt-3 text-black font-medium font-[poppins] mb-2">
                 {customer.name},
                 <span className="text-sm text-gray-500"> {customer.job}</span>
               </h3>
               <p className="text-sm text-gray-500 font-[poppins]">
-                "{customer.review}"
+                &quot;{customer.review}&quot;
               </p>
             </div>
           </div>
         ))
       ) : (
-        <p className="text-gray-500">Belum ada testimoni.</p>
+        <p className="text-gray-500 text-center w-full">Belum ada testimoni.</p>
       )}
     </div>
   );

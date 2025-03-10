@@ -16,7 +16,7 @@ export default function Teams() {
 
   return (
     <div className=" bg-white">
-      <div className="container flex flex-col pt-25 pb-20 px-20 w-full min-h-screen gap-x-10">
+      <div className="container flex flex-col px-10 pt-25 pb-20 md:px-20 w-full min-h-screen gap-x-10">
         <div className="mb-10 p-2 flex flex-col gap-y-5">
           <h1 className="text-6xl text-black font-[playfair]">Tim Kami</h1>
           <p className="text-l font-medium text-gray-800 font-[poppins]">
@@ -31,15 +31,15 @@ export default function Teams() {
         {people.map((member, index) => (
           <div
             key={index}
-            className="card flex flex-col rounded-md w-full h-70 "
+            className="card h-full flex flex-col rounded-md w-full md:h-70 "
           >
             <div className="flex items-center p-2 gap-x-5">
               <img
-                className="w-50 h-50 rounded-full object-cover"
+                className="w-24 h-24 md:w-50 md:h-50 rounded-full object-cover"
                 src={member.img}
                 alt={member.nama}
               />
-              <div className="content flex flex-col p-2 w-150 h-full">
+              <div className="content flex flex-col p-2 w-100 md:w-150 h-full">
                 <h3 className="text-l mt-3 text-black font-medium font-[poppins] mb-2">
                   {member.nama} |{" "}
                   <span className="text-sm text-gray-500">

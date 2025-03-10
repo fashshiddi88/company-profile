@@ -3,6 +3,7 @@ import { Poppins, Playfair } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/atomics/navbar.module";
 import Footer from "@/components/atomics/footer.module";
+import Head from "next/head";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -28,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className={`${poppins.variable} ${playfair.variable} antialiased`}>
         <Navbar />
         {children}

@@ -18,7 +18,7 @@ export default function Projects() {
 
   return (
     <div className="bg-white">
-      <div className="container flex flex-col pt-25 pb-20 px-20 w-full min-h-screen">
+      <div className="container flex flex-col pl-10 pr-10 w-full md:min-h-screen pt-25 pb-20 px-20">
         <div className="select flex justify-items-end">
           <select
             className="w-100 border p-2 rounded-md text-black"

@@ -12,7 +12,10 @@ export default function Navbar() {
     <nav className="w-full h-20 px-6 md:px-20 bg-white text-black flex justify-between items-center fixed top-0 shadow-md z-50">
       {/* Logo */}
       <div className="flex gap-x-2 items-center">
-        <img src="/AH.png" className="w-9 h-9" />
+        <img
+          src="https://media.discordapp.net/attachments/1348561578642898977/1348561918662545409/AH.png?ex=67cfe9a8&is=67ce9828&hm=6df7e1be62a34aff8ad6d9399b99ff0a1e6951830af0fbe9d484d83f57af36d6&=&format=webp&quality=lossless&width=625&height=625"
+          className="w-9 h-9"
+        />
         <h1 className="text-2xl md:text-3xl font-extrabold font-[playfair]">
           ArchiHub
         </h1>
