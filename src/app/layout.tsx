@@ -17,7 +17,7 @@ const playfair = Playfair({
 });
 
 export const metadata: Metadata = {
-  title: "ArchiHub",
+  title: "ArchiHub | Architecture and Design Interior Consultant",
   description: "Your Home Solution",
 };
 

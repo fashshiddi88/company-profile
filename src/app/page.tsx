@@ -40,9 +40,22 @@ export default function Home() {
           <div className="flex flex-col p-5 text-black gap-y-4">
             <h1 className=" text-6xl">Tentang Kami</h1>
             <p className="text-xl font-[poppins] font-light text-justify">
-              ArchiHub didirikan pada tahun 2007 di Jakarta dengan visi untuk
-              menghadirkan solusi arsitektur yang tidak hanya estetis tetapi
-              juga berkelanjutan.&nbsp;
+              ArchiHub lahir dari visi untuk menciptakan ruang yang tidak hanya
+              indah, tetapi juga bermakna dan fungsional. Sejak berdiri di 2007,
+              kami telah berkembang menjadi firma arsitektur yang menangani
+              berbagai proyek hunian, komersial, dan ruang publik.&nbsp;
+            </p>
+            <p className="text-xl font-[poppins] font-light text-justify">
+              Kami percaya bahwa arsitektur bukan hanya soal desain, tetapi juga
+              tentang bagaimana sebuah ruang bisa menghadirkan pengalaman
+              terbaik bagi penggunanya. Dengan budaya kerja yang kolaboratif dan
+              inovatif, tim kami—yang terdiri dari para profesional
+              berbakat—selalu berusaha menghadirkan solusi terbaik dalam setiap
+              proyek.
+            </p>
+            <p className="text-xl font-[poppins] font-light text-justify">
+              Dengan semangat {`"Rancang. Bangun. Hidup."`} kami siap membantu
+              mewujudkan ruang yang sesuai dengan visi dan kebutuhan Anda.&nbsp;
               <span>
                 <Link className="underline" href={"/about"}>
                   Selengkapnya
@@ -83,7 +96,7 @@ export default function Home() {
           <div className="w-full h-2/3 p-4">
             <div className="flex flex-col items-center w-full gap-y-5">
               <h1 className="text-4xl text-black">Proyek Kami</h1>
-              <ProductList limit={3} />
+              <ProductList limit={4} />
 
               <Link
                 href={"/services"}

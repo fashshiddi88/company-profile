@@ -23,9 +23,9 @@ export default function AboutUs() {
           <p className="text-l font-light text-gray-800 text-justify font-[poppins]">
             Di ArchiHub, kami percaya bahwa setiap desain bukan sekadar bentuk,
             tetapi juga memiliki makna dan fungsi yang nyata dalam kehidupan.
-            Dengan semangat "Rancang. Bangun. Hidup.", kami menghadirkan karya
-            arsitektur yang inovatif, berkualitas, dan berdampak positif bagi
-            penggunanya.
+            Dengan semangat {`"Rancang. Bangun. Hidup."`}, kami menghadirkan
+            karya arsitektur yang inovatif, berkualitas, dan berdampak positif
+            bagi penggunanya.
           </p>
           <p className="text-l font-light text-gray-800 text-justify font-[poppins]">
             ArchiHub didirikan oleh Michael Setiawan, seorang arsitek visioner

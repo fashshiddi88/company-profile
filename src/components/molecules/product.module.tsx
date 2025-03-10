@@ -2,25 +2,30 @@
 import { useState, useEffect } from "react";
 import { getProducts, IProduct } from "@/lib/services/productService";
 
-export default function ProductList({ limit }: { limit?: number }) {
+interface ProductListProps {
+  limit?: number;
+  category?: string;
+}
+
+export default function ProductList({ limit, category }: ProductListProps) {
   const [products, setProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const data = await getProducts(limit);
+      const data = await getProducts(limit, category);
       setProducts(data);
     };
 
     fetchProducts();
-  }, [limit]);
+  }, [limit, category]);
 
   return (
-    <div className="flex justify-between w-full h-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
       {products.length > 0 ? (
         products.map((product, index) => (
           <div
             key={index}
-            className="card bg-white flex flex-col rounded-md w-100 h-70 items-center shadow-md p-2"
+            className="card bg-white flex flex-col rounded-md w-full h-70 items-center shadow-md p-2"
           >
             <img
               className="w-full h-40 object-cover rounded-t-md mb-2"

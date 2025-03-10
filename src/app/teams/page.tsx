@@ -16,7 +16,7 @@ export default function Teams() {
 
   return (
     <div className=" bg-white">
-      <div className="container flex flex-col pt-25 pb-20 px-20 w-full h-full gap-x-10">
+      <div className="container flex flex-col pt-25 pb-20 px-20 w-full min-h-screen gap-x-10">
         <div className="mb-10 p-2 flex flex-col gap-y-5">
           <h1 className="text-6xl text-black font-[playfair]">Tim Kami</h1>
           <p className="text-l font-medium text-gray-800 font-[poppins]">
