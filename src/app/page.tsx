@@ -21,18 +21,24 @@ export default function Home() {
   return (
     <div className="bg-white font-[family-name:var(--font-poppins)]">
       <main className="relative w-full h-screen">
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url("${bgImages[0]}")` }}
-        >
-          <div className="absolute inset-0 bg-black/50"></div>
-          <div className="bg-slate-900 opacity-25 p-10 mt-90 h-40 w-80 md:p-20 ml-10 md:ml-20 mt-20 md:mt-100 w-11/12 md:w-200 h-40 md:h-60 relative text-white z-10"></div>
-          <div className="absolute opacity-50 inset-0 bg-slate-500 mx-15 mt-100 w-70 h-20 md:ml-40 mt-20 md:mt-110 w-10/12 md:w-160 h-20 md:h-40"></div>
-          <div className="absolute inset-0 ml-15 mt-100 md:ml-41 mt-20 md:mt-110">
-            <h1 className="text-6xl md:text-9xl font-bold">ArchiHub</h1>
-            <p className="text-xl md:text-3xl">Rancang. Bangun. Hidup.</p>
+        {bgImages.length > 0 ? (
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url("${bgImages[0]}")` }}
+          >
+            <div className="absolute inset-0 bg-black/50"></div>
+            <div className="bg-slate-900 opacity-25 p-10 mt-90 h-40 w-80 md:p-20 ml-10 md:ml-20 mt-20 md:mt-100 w-11/12 md:w-200 h-40 md:h-60 relative text-white z-10"></div>
+            <div className="absolute opacity-50 inset-0 bg-slate-500 mx-15 mt-100 w-70 h-20 md:ml-40 mt-20 md:mt-110 w-10/12 md:w-160 h-20 md:h-40"></div>
+            <div className="absolute inset-0 ml-15 mt-100 md:ml-41 mt-20 md:mt-110">
+              <h1 className="text-6xl md:text-9xl font-bold">ArchiHub</h1>
+              <p className="text-xl md:text-3xl">Rancang. Bangun. Hidup.</p>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="flex items-center justify-center h-screen">
+            <div className="w-16 h-16 border-4 border-gray-600 border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        )}
       </main>
       <div className="pt-10 md:pt-26 px-5 md:px-20 pb-10 md:pb-20">
         <div className="flex flex-col md:flex-row gap-x-5 md:gap-x-30">
