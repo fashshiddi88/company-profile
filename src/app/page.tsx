@@ -29,9 +29,23 @@ export default function Home() {
             <div className="absolute inset-0 bg-black/50"></div>
             <div className="bg-slate-900 opacity-25 p-10 mt-90 h-40 w-80 md:p-20 ml-10 md:ml-20 mt-20 md:mt-100 w-11/12 md:w-200 h-40 md:h-60 relative text-white z-10"></div>
             <div className="absolute opacity-50 inset-0 bg-slate-500 mx-15 mt-100 w-70 h-20 md:ml-40 mt-20 md:mt-110 w-10/12 md:w-160 h-20 md:h-40"></div>
-            <div className="absolute inset-0 ml-15 mt-100 md:ml-41 mt-20 md:mt-110">
+            <div className="absolute z-50 inset-0 ml-15 mt-100 md:ml-41 mt-20 md:mt-110">
               <h1 className="text-6xl md:text-9xl font-bold">ArchiHub</h1>
               <p className="text-xl md:text-3xl">Rancang. Bangun. Hidup.</p>
+              <div className="flex gap-x-5">
+                <Link
+                  href="/projects"
+                  className=" mt-5 font-[poppins] inline-block bg-white text-black px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base rounded-md shadow-md transition duration-300 hover:bg-gray-200"
+                >
+                  Lihat Proyek
+                </Link>
+                <Link
+                  href="/teams"
+                  className=" mt-5 font-[poppins] inline-block bg-white text-black px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base rounded-md shadow-md transition duration-300 hover:bg-gray-200"
+                >
+                  Hubungi Kami
+                </Link>
+              </div>
             </div>
           </div>
         ) : (
