@@ -115,7 +115,7 @@ export default function Home() {
               <ProductList limit={4} />
 
               <Link
-                href={"/services"}
+                href={"/projects"}
                 className="w-50 h-10 bg-slate-500 text-white rounded-sm font-[poppins] cursor-pointer flex justify-center items-center"
               >
                 Selengkapnya

@@ -1,21 +1,29 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HiMenu, HiX } from "react-icons/hi"; // Icon menu dari react-icons
+import { HiMenu, HiX } from "react-icons/hi";
+import { getLogo } from "@/lib/services/logo";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [logo, setLogo] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchLogo = async () => {
+      const logoUrl = await getLogo();
+      setLogo(logoUrl);
+    };
+
+    fetchLogo();
+  }, []);
 
   return (
     <nav className="w-full h-20 px-6 md:px-20 bg-white text-black flex justify-between items-center fixed top-0 shadow-md z-50">
       {/* Logo */}
       <div className="flex gap-x-2 items-center">
-        <img
-          src="https://media.discordapp.net/attachments/1348561578642898977/1348561918662545409/AH.png?ex=67cfe9a8&is=67ce9828&hm=6df7e1be62a34aff8ad6d9399b99ff0a1e6951830af0fbe9d484d83f57af36d6&=&format=webp&quality=lossless&width=625&height=625"
-          className="w-9 h-9"
-        />
+        <img src={logo[0]} className="w-9 h-9" />
         <h1 className="text-2xl md:text-3xl font-extrabold font-[playfair]">
           ArchiHub
         </h1>
